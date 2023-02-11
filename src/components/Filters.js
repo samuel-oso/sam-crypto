@@ -52,7 +52,7 @@ const Filters = () => {
           </button>
         </form>
         <label className="relative flex justify-center items-center">
-          <span className="font-bold mr-2">sort by: </span>
+          <span className="font-bold mr-2">sort by!: </span>
           <select
             name="sortby"
             className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0"
