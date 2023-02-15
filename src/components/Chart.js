@@ -103,7 +103,7 @@ const Chart = ({ id }) => {
           }`}
           onClick={() => setType("prices")}
         >
-          Price
+          Price!
         </button>
         <button
           className={`text-sm py-0.5 px-1.5 ml-2 bg-opacity-25 rounded capitalize ${
