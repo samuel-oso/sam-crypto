@@ -10,10 +10,7 @@ const TrendingCoin = ({ data }) => {
 
   return (
     <div
-      className="w-[40%] bg-gray-200 mb-12
-    last:mb-0 rounded-lg p-4 relative cursor-pointer
-    hover:bg-gray-100 hover:bg-opacity-40
-    "
+      className="lg:w-[40%] sm:w-[60%] w-[80%] bg-gray-200 mb-12 last:mb-0 rounded-lg p-4 relative cursor-pointer hover:bg-gray-100 hover:bg-opacity-40"
       onClick={() => getCoinDetails(data.id)}
     >
       {data ? (
@@ -55,20 +52,13 @@ const TrendingCoin = ({ data }) => {
           <img
             src={data.large}
             alt={data.name}
-            className="w-[35%] h-auto rounded-full absolute top-2/4 -right-12
--translate-y-2/4
-"
+            className="absolute lg:top-2/4 top-4 lg:-right-12 -right-6 -translate-y-2/4  lg:w-[35%] w-[5rem]  h-auto rounded-full"
           />
         </>
       ) : (
-        <div
-          className="w-full  h-full flex justify-center items-center
-             "
-        >
+        <div className="w-full h-full flex justify-center items-center">
           <div
-            className="w-8 h-8 border-4 border-cyan rounded-full
-             border-b-gray-200 animate-spin 
-             "
+            className="w-8 h-8 border-4 border-cyan rounded-full border-b-gray-200 animate-spin"
             role="status"
           />
           <span className="ml-2">please wait...</span>

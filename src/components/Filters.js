@@ -27,11 +27,11 @@ const Filters = () => {
   };
 
   return (
-    <div className="w-full h-12 border-2 border-gray-100 rounded-lg flex items-center justify-between relative">
+    <div className=" w-full lg:h-12 h-full lg:border-2 rounded-lg border-solid lg:border-gray-100 border-0 flex lg:flex-row flex-col lg:items-center lg:justify-between relative align-start justify-between ">
       <Search />
-      <div className="flex mr-7">
+      <div className="flex lg:mr-7 justify-between mt-4 lg:mt-0 sm:flex-row flex-col relative">
         <form
-          className="relative flex items-center font-nunito mr-12"
+          className="relative flex items-center font-nunito md:mr-12 mr-1"
           onSubmit={handleCurrencySubmit}
         >
           <label
@@ -51,11 +51,13 @@ const Filters = () => {
             <img src={submitIcon} alt="submit" className="w-full h-auto" />
           </button>
         </form>
-        <label className="relative flex justify-center items-center">
-          <span className="font-bold mr-2">sort by: </span>
+        <label className="relative flex sm:justify-center justify-start items-center mt-4 sm:mt-0">
+          <span className="mr-2 sm:font-bold font-medium sm:text-base text-sm w-16">
+            sort by:{" "}
+          </span>
           <select
             name="sortby"
-            className="rounded bg-gray-200 text-base pl-2 pr-10 py-0.5 leading-4 capitalize focus:outline-0"
+            className="rounded bg-gray-200 sm:text-base text-sm pl-2 pr-10 py-1.5 focus:outline-0 text-transparent appearance-none capitalize leading-4 w-full sm:w-48 "
             onClick={handleSort}
           >
             <option value="market_cap_desc">market cap desc</option>
@@ -74,7 +76,7 @@ const Filters = () => {
           />
         </label>
         <button
-          className="w-[2rem] ml-4 hover:scale-110 transition-all transition-ease relative"
+          className="w-[2rem] ml-4 hover:scale-110 transition-all transition-ease absolute right-0 top-0 sm:relative"
           onClick={resetFunction}
         >
           <svg

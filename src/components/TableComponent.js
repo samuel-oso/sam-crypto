@@ -61,10 +61,10 @@ const TableComponent = () => {
             >
               <tr>
                 <th className="py-1">asset</th>
-                <th className="py-1">name</th>
+                <th className="py-1 sm:table-cell hidden">name</th>
                 <th className="py-1">price</th>
-                <th className="py-1">total volume</th>
-                <th className="py-1">market cap change</th>
+                <th className="py-1 md:table-cell hidden">total volume</th>
+                <th className="py-1 sm:table-cell hidden">market cap change</th>
                 <th className="py-1 lg:table-cell hidden">1H</th>
                 <th className="py-1 lg:table-cell hidden">24H</th>
                 <th className="py-1 lg:table-cell hidden">7D</th>
@@ -79,7 +79,7 @@ const TableComponent = () => {
             hover:bg-gray-200 last:border-b-0
             "
                   >
-                    <td className="py-4 flex items-center uppercase">
+                    <td className="py-4 uppercase flex items-center">
                       <SaveBtn data={data} />
                       <img
                         className="w-[1.2rem] h-[1.2rem] mx-1.5"
@@ -92,7 +92,7 @@ const TableComponent = () => {
                         </Link>
                       </span>
                     </td>
-                    <td className="py-4">
+                    <td className="py-4 cursor-pointer sm:table-cell hidden">
                       <Link to={`/${data.id}`} className="cursor-pointer">
                         {data.name}
                       </Link>
@@ -103,8 +103,10 @@ const TableComponent = () => {
                         currency: currency,
                       }).format(data.current_price)}
                     </td>
-                    <td className="py-4">{data.total_volume}</td>
-                    <td className="py-4">
+                    <td className="py-4 sm:table-cell hidden">
+                      {data.total_volume}
+                    </td>
+                    <td className="py-4 md:table-cell hidden">
                       {data.market_cap_change_percentage_24h}%
                     </td>
                     <td
@@ -165,7 +167,7 @@ const TableComponent = () => {
           </h1>
         ) : null}
       </div>
-      <div className="flex items-center justify-between mt-4 capitalize h-[2rem]">
+      <div className="flex md:flex-row flex-col items-center justify-between  mt-4 capitalize h-[2rem]">
         <span>
           Data provided by{" "}
           <a
